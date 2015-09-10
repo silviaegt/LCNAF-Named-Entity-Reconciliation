@@ -8,7 +8,7 @@
         {
           "reverse": false,
           "caseSensitive": false,
-          "column": "Name",
+          "column": "VIAF",
           "valueType": "string",
           "blankPosition": 2,
           "errorPosition": 1
@@ -18,12 +18,12 @@
   },
   {
     "op": "core/blank-down",
-    "description": "Blank down cells in column Name",
+    "description": "Blank down cells in column VIAF",
     "engineConfig": {
       "facets": [],
       "mode": "row-based"
     },
-    "columnName": "Name"
+    "columnName": "VIAF"
   },
   {
     "op": "core/row-removal",
@@ -36,9 +36,9 @@
           "selectError": false,
           "omitError": false,
           "selectBlank": false,
-          "name": "Name",
+          "name": "VIAF",
           "omitBlank": false,
-          "columnName": "Name",
+          "columnName": "VIAF",
           "type": "list",
           "selection": [
             {
@@ -55,12 +55,12 @@
   },
   {
     "op": "core/text-transform",
-    "description": "Text transform on cells in column Name using expression grel:replace(value, ' ', '%20')",
+    "description": "Text transform on cells in column VIAF using expression grel:replace(value, ' ', '%20')",
     "engineConfig": {
       "facets": [],
       "mode": "row-based"
     },
-    "columnName": "Name",
+    "columnName": "VIAF",
     "expression": "grel:replace(value, ' ', '%20')",
     "onError": "keep-original",
     "repeat": false,
@@ -68,14 +68,14 @@
   },
   {
     "op": "core/column-addition-by-fetching-urls",
-    "description": "Create column Fetch at index 1 by fetching URLs based on column Name using expression "grel:\"http://viaf.org/viaf/" + value",
+    "description": "Create column Fetch at index 1 by fetching URLs based on column VIAF using expression "grel:\"http://viaf.org/viaf/" + value",
     "engineConfig": {
       "facets": [],
       "mode": "row-based"
     },
     "newColumnName": "Fetch",
     "columnInsertIndex": 1,
-    "baseColumnName": "Name",
+    "baseColumnName": "VIAF",
     "urlExpression": "grel:\"http://viaf.org/viaf/" + value",
     "onError": "set-to-blank",
     "delay": 300
@@ -375,7 +375,7 @@
       "facets": [],
       "mode": "row-based"
     },
-    "columnName": "Name",
+    "columnName": "VIAF",
     "expression": "grel:replace(value, '%20', ' ')",
     "onError": "keep-original",
     "repeat": false,
